@@ -20,4 +20,5 @@ jobs:
       - checkout
       - run: npm install
       - run: sudo npm link @angular/cli
+      - run: npm install debug
       - run: npm run test
