@@ -15,7 +15,7 @@ jobs:
     docker:
       - image: cimg/node:15.6.0
         environment:
-            CHROME_BIN: /usr/bin/google-chrome
+            CHROME_BIN: /usr/bin/chromium-browser
     steps:
       - checkout
       - run: npm install
