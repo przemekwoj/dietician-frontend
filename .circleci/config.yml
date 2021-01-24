@@ -10,11 +10,13 @@ workflows:
       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
           requires:
             - build
-
 jobs:
   build:
     docker:
       - image: cimg/node:15.6.0
+        # environment:
+        #     CHROME_BIN: /usr/bin/google-chrome
     steps:
       - checkout
       - run: npm install
+      # - run: npm test
