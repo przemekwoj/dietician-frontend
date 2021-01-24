@@ -17,4 +17,5 @@ jobs:
       - image: cimg/node:15.6.0
     steps:
       - checkout
-      # - run: mvn verify
+      - run: npm install
+      - run: npm test
