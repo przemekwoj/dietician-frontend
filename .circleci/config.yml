@@ -20,4 +20,4 @@ jobs:
       - checkout
       - run: npm install
       - run: sudo npm link @angular/cli
-      - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: npm run test
