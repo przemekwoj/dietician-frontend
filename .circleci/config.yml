@@ -12,8 +12,8 @@ workflows:
             - build
 jobs:
   build:
-    executor:
-      name: node/default
+    docker:
+      - image: circleci/node:12-browsers
     # docker:
     #   - image: cimg/node:15.6.0
         # environment:
@@ -24,4 +24,4 @@ jobs:
       # - run: sudo npm link @angular/cli
       # - run: npm install debug
       # - run: npm install puppeteer
-      - run: npm test
+      - run: npm run test --no-watch --no-progress --browsers=ChromeHeadlessCI
