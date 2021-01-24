@@ -12,14 +12,16 @@ workflows:
             - build
 jobs:
   build:
-    docker:
-      - image: cimg/node:15.6.0
+    executor:
+      name: node/default
+    # docker:
+    #   - image: cimg/node:15.6.0
         # environment:
         #     CHROME_BIN: /usr/bin/chromium-browser
     steps:
       - checkout
       - run: npm install
-      - run: sudo npm link @angular/cli
+      # - run: sudo npm link @angular/cli
       # - run: npm install debug
       # - run: npm install puppeteer
-      # - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: npm test
